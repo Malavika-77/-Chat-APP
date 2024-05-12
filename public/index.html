@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>page one</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="background">
+    <img src="cat.webp" width="400px" height="550px" class="small">
+    <input type="text" id="username" class="text" placeholder="NAME">
+    <input type="text" id="message" class="text2" placeholder="MESSAGE">
+    <button id="btn" class="btn">CLICK ME</button>
+    <div class="area" id="area">
+        <!-- Messages will be displayed here -->
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        document.addEventListener("DOMContentLoaded", function(){
+            var name = document.getElementById("username");
+            var msg = document.getElementById("message");
+            var area = document.getElementById("area");
+            var btn = document.getElementById("btn");
+            
+            btn.addEventListener("click", function(event){
+                var recname = name.value.trim();
+                if(recname !== ""){
+                    socket.emit("send name", name.value);
+                    socket.emit("send message", msg.value);
+                    msg.value = ""; // Clear input field
+                }
+                else {
+                    console.log("Message is empty");
+                }
+            });
+            
+            socket.on("send name", function(username){
+                var nameElement = document.createElement("p");
+                nameElement.style.backgroundColor = "grey";
+                nameElement.style.fontSize = "16px"; // Changed font size for better visibility
+                nameElement.textContent = username;
+                area.appendChild(nameElement);
+            });
+            
+            socket.on("send message", function(message){
+                var msgElement = document.createElement("p");
+                msgElement.style.backgroundColor = "grey";
+                msgElement.style.fontSize = "16px"; // Changed font size for better visibility
+                msgElement.textContent = message;
+                area.appendChild(msgElement);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+.background{
+    background-image: url("navy.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+   ;
+}
+
+.small{
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    border-radius: 100px;
+}
+.btn{
+    position: absolute;
+    bottom: 130px;
+    right: 150px;
+    border-radius: 100px;
+    width: 200px;
+    height: 100px;
+font-style:normal;
+font-size:x-large;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+background-color: cadetblue;
+
+}
+.txt{
+    background-color:rgb(178, 187, 204);
+    position: absolute;
+    width: 1200px;
+    height: 40px;
+    bottom:35PX;
+    left: 26px;
+
+}
+.btn2{
+    position: absolute;
+    
+    border-radius: 100px;
+    width: 200px;
+    bottom:35PX;
+    left: 1250px;
+    height: 100px;
+    font-style:normal;
+    font-size:x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: cadetblue;
+}
+.text{
+    position: absolute;
+    border-radius: 10px;
+    width: 300px;
+    bottom:300PX;
+    left: 1100px;
+    height: 30px;
+    font-style:normal;
+    font-size:x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: cadetblue;
+    text-align: center;
+}
+.text2{
+    position: absolute;
+    border-radius: 10px;
+    width: 300px;
+    bottom:250PX;
+    left: 1100px;
+    height: 30px;
+    font-style:normal;
+    font-size:x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: cadetblue;
+    text-align: center;
+}
+.area{
+    position: absolute;
+    border-radius: 10px;
+    width: 1000px;
+    bottom:20PX;
+    left: 20px;
+    height: 700px;
+    background-color: antiquewhite;
+
+}
+.h1{
+    font-style: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0cap;
+}
+.block
+{
+    position: absolute;
+    border-radius: 10px;
+    width: 1000px;
+    bottom:650PX;
+    left: 0px;
+    height: 50px;
+    background-color: rgb(73, 231, 81);
+
+}

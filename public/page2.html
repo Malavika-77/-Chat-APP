@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>page one </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="background">
+    <form >
+        <textarea class="txt" id="msg">
+        
+        </textarea>
+       
+        <button name="btn2" class="btn2">SEND</button>
+   
+</form>
+<div id="chatwindow">
+    <img src="white.jpg" width="1476px" height="722px" >
+</div>
+<script>
+    const socket=io();
+    const urlparams=new URLSearchParams(Window.locatio.search);
+    const rec=urlparams.get("rec");
+    ////////////////
+    function display(from,message){
+        var chatwindow=document.getElementById("chatwindow");
+        var messageElement=document.createElement("div");
+        messageElement.textContent="${from}:${message}";
+        chatwindow.appendChild(messageElement);
+    };
+    //////////////////////event handle
+    socket.on(message,({from,message})=>{
+        displayMessage(from,message);
+    });
+/////////////////////////////////////////message passing
+
+document.addEventListener("DOMContentLoaded",function(){
+    var sendbtn=document.getElementById("btn2");
+    if(!sendbtn){
+        console.log("btn2 is not found");
+    } 
+    else{
+        sendbtn.addEventListener("click",function(){
+            if(event.value.target=="sendbtn"){
+
+        var msg=document.getElementById("msg").value.trim();
+        if(msg!=""){
+            socket.emit("sendMessage",{to:rec,msg});
+            displayMessage("Me",msg);
+            msg.value="";
+        }
+        else{
+            alert("enter msg");
+        }
+    }});
+}
+
+    });
+</script>
+</body>
+
+</html>
